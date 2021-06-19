@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #3e3e3e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container" align="center">
+    <h1>Произошла ошибка, пожалуйста выберите необходимые действия</h1>
+    <br/>
+    <h1>Перейти на страницу входа:</h1>
+    <form class="form-signin" method="get" action="/login">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+    <h1>Перейти на страницу выхода:</h1>
+    <form class="form-signin" method="get" action="/logout">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+    </form>
+    <h1>Перейти на страницу списка аниме:</h1>
+    <form class="form-signin" method="get" action="/anime">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Anime List page</button>
+    </form>
+    <h1>Перейти на страницу админа:</h1>
+    <form class="form-signin" method="get" action="/admin">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Admin page</button>
+    </form>
+</div>
+</body>
+</html>
