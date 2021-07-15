@@ -20,8 +20,9 @@ public class Main {
 		SpringApplication.run(Main.class,args);
 	}
 
+	/*
 	@Bean
-	CommandLineRunner commandLineRunner(ApplicationUserRepository userRepository, PasswordEncoder passwordEncoder){
+	CommandLineRunner commandLineRunner(ApplicationUserRepository userRepository, PasswordEncoder passwordEncoder) {
 		return args -> {
 			ApplicationUser user1 = new ApplicationUser();
 			user1.setUsername("Andrew");
@@ -43,6 +44,12 @@ public class Main {
 
 		};
 	}
+
+	 */
+
+
+
+
 
 
 

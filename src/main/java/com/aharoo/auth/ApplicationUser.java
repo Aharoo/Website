@@ -8,8 +8,8 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
+import java.io.Serial;
 import java.util.Collection;
 @NoArgsConstructor
 @Entity
@@ -18,6 +18,9 @@ import java.util.Collection;
 @Getter
 @Setter
 public class ApplicationUser implements UserDetails {
+
+	@Serial
+	private static final long serialVersionUID = 3655203004822493087L;
 
 	@SequenceGenerator(
 			name = "app_user_sequence",
@@ -33,6 +36,7 @@ public class ApplicationUser implements UserDetails {
 	String username;
 	String password;
 	String email;
+	String filename = "default";
 	@Enumerated(EnumType.STRING)
 	ApplicationUserRole role;
 	Boolean locked = false;

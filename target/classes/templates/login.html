@@ -1,5 +1,5 @@
 <html lang="en">
-<head>
+<head xmlns:th="http://www.thymeleaf.org">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -18,6 +18,7 @@
 <body>
 <div class="container">
     <form class="form-signin" method="post" action="/login">
+        <p style="color: #00ccff" th:text="${checkemail}"/>
         <h2 class="form-signin-heading">Please login to Aharoo's website</h2>
         <p>
             <label for="username" class="sr-only">Username</label>
@@ -32,6 +33,9 @@
         <p>
             Remember me?
             <input type="checkbox" id="remember-me" name="remember-me" class="form-control">
+        </p>
+        <p>
+            <a href="/recover">Forgot password?</a>
         </p>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
     </form>

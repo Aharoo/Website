@@ -5,11 +5,15 @@ import com.aharoo.registration.email.token.ConfirmationToken;
 import com.aharoo.registration.email.token.ConfirmationTokenService;
 import com.aharoo.repository.ApplicationUserRepository;
 import lombok.AllArgsConstructor;
+import org.checkerframework.checker.units.qual.C;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -64,6 +68,23 @@ public class ApplicationUserService implements UserDetailsService {
 		return token;
 	}
 
+	@Transactional
+	public String recoverPassword(String email){
+		String password = new PasswordGenerator().generateRandomPassword();
+		String encodedPassword = passwordEncoder.encode(password);
+
+		ApplicationUser user = userRepository.findByEmail(email).orElseThrow(()
+				-> new UsernameNotFoundException(String.format("User with email %s was not found",email)));
+		boolean userExists = userRepository.findByEmail(email).isPresent();
+		if (userExists)
+			userRepository.updatePassword(encodedPassword,email);
+		else
+			throw new IllegalStateException("User was not found");
+
+		emailSender.send(email,emailSender.buildRecoveringEmail(user.getUsername(),password));
+		return password;
+	}
+
 	public List<ApplicationUser> loadAllUsers(){
 		return userRepository.findAll();
 	}
@@ -71,5 +92,29 @@ public class ApplicationUserService implements UserDetailsService {
 	public void enableUser(String email){userRepository.enableAppUser(email);}
 
 	public Optional<ApplicationUser> findById(Integer user_id){ return userRepository.findById(user_id);}
+
+	public ApplicationUser updateUser(ApplicationUser user){ return userRepository.save(user);}
+
+	public void deleteUser(Integer id){ userRepository.deleteById(id);}
+
+	public Optional<ApplicationUser> findByEmail(String email){return userRepository.findByEmail(email);}
+
+	class PasswordGenerator {
+
+		SecureRandom randomChar = new SecureRandom();
+
+		public String generateRandomPassword(){
+			String capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			String smallLetters = "abcdefghijklmnopqrstuvwxyz";
+			String numbers = "1234567890";
+			String values = capitalLetters + smallLetters + numbers;
+			char[] password = new char[12];
+			for (int i = 0; i < 12; i++){
+				password[i] = values.charAt(randomChar.nextInt(values.length()));
+			}
+			String passwordString = String.valueOf(password);
+			return passwordString;
+		}
+	}
 
 }

@@ -128,6 +128,15 @@ a.more:hover { text-decoration: none; color: #000; text-shadow: 1px 1px 1px #fff
 	background: url(images/templatemo_middle.png) no-repeat
 }
 
+#templatemo_right {
+	float: right;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 50%;
+	height: 50%;
+}
+
 #intro { float: left; padding: 0; width: 480px; }
 #intro h2 { font-size: 30px; margin-bottom: 30px }
 #intro p { font-size: 14px; letter-spacing: 1px; word-spacing: 5px; line-height: 24px; color: #333; margin-bottom: 20px }

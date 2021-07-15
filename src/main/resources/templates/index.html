@@ -10,7 +10,6 @@
 <link rel="stylesheet" th:href="@{/css/nivo-slider.css}" type="text/css" media="screen" />
 <script th:src="@{/js/jquery.min.js}" type="text/javascript"></script>
 <script th:src="@{/js/jquery.nivo.slider.js}" type="text/javascript"></script>
-
 <script type="text/javascript">
 $(window).load(function() {
 	$('#slider').nivoSlider({
@@ -33,26 +32,27 @@ $(window).load(function() {
 });
 </script>
 
+
 </head>
 <body>
 
 <div id="templatemo_wrapper">
 	<div id="templatemo_header">
-    	
+
         <div id="site_title"><h1><a href="#">Aharoo's web-site</a></h1></div>
-        
-		<div id="twitter"><a href="#"></a></div>
-        
+
+        <div id="instagram"><a href="https://www.instagram.com"></a></div>
+
         <div class="cleaner"></div>
     </div> <!-- end of templatemo header -->
     
     <div id="templatemo_menu">
         <ul>
             <li><a href="/" class="current">Home</a></li>
-            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/user-profile">User Profile</a></li>
             <li><a href="/anime">Anime List</a></li>
-            <li><a href="/admin">Admin</a></li>
             <li><a href="/registration">Sign Up</a></li>
+            <li><a href="/login">Login</a></li>
             <li><a href="/logout" class = "last">Logout</a></li>
         </ul>   
 		 	
@@ -72,61 +72,33 @@ $(window).load(function() {
     
     	<div id="intro">
         	<h2>Home Page</h2>
-            <p>Пробный сайт для просмотра галереи,списков аниме сериалов и регистрации новых пользователей.</p>
-            <a class="learn_more" href="#">More</a>
+            <p>Страница для добавления и просмотра артов</p>
+            <form method="post" action="/" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/jpeg,image/png,image/jpg">
+                <input type="text" name="description" placeHolder="Add description for image">
+                <p></p>
+                <button type="submit" class="btn btn-primary">Add image</button>
+            </form>
         </div>
-	</div> <!-- end of middle -->
+	</div>
     
     <div id="templatemo_main_top"></div>
     <div id="templatemo_main">
     	<div class="col_w960">
-            <div class="col_w450 float_l">
-            	<h2>Welcome to the family,son!</h2>
-              	<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sapien leo, luctus non molestie eu, bibendum in dolor.</em></p>
-                <p>templatemo.com provides free HTML CSS templates for your personal or business websites. Please tell your friends about it. Thank you.</p>
-              	<p>Maecenas id ante ut felis accumsan suscipit posuere quis augue. Vivamus eu mollis nisi. Praesent at erat a magna ultricies bibendum. Sed sagittis mollis nulla non interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a>.</p>
-                <a class="more" href="#">More</a>
+
+            <div style="width: 600px; margin: 0 auto; text-align: center">
+                <h2>Random Arts</h2>
+                <ul class="lp_frontpage" th:each="image:${images}">
+                    <li><img width="600" height="500" th:src="@{${'/images/uploadedImages/' + image.filename}}" alt="Cannot show image" /></li>
+                    <p th:text="${image.description}" style=""></p>
+                    <p th:text="${image.timeOfCreation}" style=""></p>
+                </ul>
             </div>
-            
-            <div class="col_w450 float_r">
-           	  	<h2>New Projects</h2>
-       	  		<ul class="lp_frontpage">
-                	<li><a href="#"><img width="300" height="250" th:src="@{/images/templatemo_image_01.jpg}" alt="Image 01" /></a></li>
-                    <li><a href="#"><img width="300" height="250" th:src="@{/images/templatemo_image_02.jpg}" alt="Image 02" /></a></li>
-                    <li><a href="#"><img width="300" height="250" th:src="@{/images/templatemo_image_03.jpg}" alt="Image 03" /></a></li>
-                    <li><a href="#"><img width="300" height="250" th:src="@{/images/templatemo_image_04.jpg}" alt="Image 04" /></a></li>
-                </ul>    
-                <a class="more" href="/gallery">More</a>
-            </div>
-            
+
+
             <div class="cleaner"></div>
 		</div>
-        
-        <div class="col_w960 col_last">
-          	<div class="col_allw300 frontpage_box">
-	            <img th:src="@{/images/icon1.png}" alt="Image" />
-                <h2>CSS Templates</h2>
-                <span class="tagline">Morbi sed vehicula augue</span>
-                <p>Duis eget lacus odio, et rhoncus diam. Suspendisse pharetra vulputate tincidunt. <a href="#">Sed auctor</a> volutpat magna vel sagittis. Nam hendrerit porta.</p>
-              	<a class="more" href="#">More</a>
-        	</div>
-            <div class="col_allw300 frontpage_box">
-                <img th:src="@{/images/icon2.png}" alt="Image" />
-                <h2>Social Media</h2>
-                <span class="tagline">Morbi tincidunt lacinia mauris</span>
-                <p>Ut lorem sapien, <a href="#">sodales ut sollicitudin</a> ut, fermentum euismod dolor. Aenean sed felis non sapien consectetur adipiscing eget vitae.</p>
-              	<a class="more" href="#">More</a>
-            </div>
-            <div class="col_allw300 frontpage_box col_last">
-				<img th:src="@{/images/icon3.png}" alt="Image" />
-              	<h2>Graphic Design</h2>
-                <span class="tagline">Aenean feugiat fermentum </span>
-              	<p>Sed nisi quam, egestas ac bibendum eu, dictum id enim. <a href="#">Pellentesque et</a> magna neque accumsan nisi. Vivamus aliquet metus id magna semper. </p>
-                <a class="more" href="#">More</a>
-            </div>
-        	<div class="cleaner"></div>
-        </div>
-        
+
     </div> <!-- end of main -->
     <div id="templatemo_main_bottom"></div>
     
@@ -136,7 +108,7 @@ $(window).load(function() {
     
     </div> <!-- end of templatemo_footer -->
     
-</div> <!-- end of templatemo wrapper -->
+</div> <!-- <img th:src="@{/images/uploadedImages/{filename}(filename=${user.filename})}" alt="Image is null"/> -->
 
 </body>
 </html>

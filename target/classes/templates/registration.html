@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Briefcase Contact</title>
@@ -10,7 +10,8 @@
 Briefcase Template
 http://www.templatemo.com/preview/templatemo_325_briefcase
 -->
-<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link href="/templatemo_style.css" rel="stylesheet" type="text/css" />
 
 <script language="javascript" type="text/javascript">
 function clearText(field)
@@ -31,51 +32,58 @@ function clearText(field)
 	<div id="templatemo_header">
     	
         <div id="site_title"><h1><a href="#">Briefcase</a></h1></div>
-        
-		<div id="twitter"><a href="#"></a></div>
-        
+
+        <div id="instagram"><a href="https://www.instagram.com"></a></div>
+
         <div class="cleaner"></div>
     </div> <!-- end of templatemo header -->
     
     <div id="templatemo_menu">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/gallery" class="current">Gallery</a></li>
+            <li><a href="/user-profile">User Profile</a></li>
             <li><a href="/anime">Anime List</a></li>
-            <li><a href="/admin">Admin</a></li>
             <li><a href="/registration" class = "current">Sign Up</a></li>
+            <li><a href="/login">Login</a></li>
             <li><a href="/logout">Logout</a></li>
         </ul>
         <div class="cleaner"></div>
     </div> <!-- end of templatemo_menu -->
     
     <div id="templatemo_middle_subpage">
-        <h2>Contact Information </h2>
-        <p>Proin eu elit sit amet lorem vestibulum tincidunt. Praesent eu est nec nunc egestas suscipit. Sed dapibus suscipit enim vel commodo. Nullam ullamcorper dignissim lectus vel adipiscing. Duis eget lacus odio, et rhoncus diam. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a>.</p>
+        <h2>Советы по регистрации</h2>
+        <p>Рекомендуемая длина логина от 4 символов и более,рекомендуемая длина пароля от 6 символов и более,пароль должен содержать буквы верхнего и нижнего регистров,спец.символы и цифры.</p>
+        <p>Необходимо вводить действительную электронную почту,на неё должно придти подтверждение регистрации!</p>
     </div>
     
     <div id="templatemo_main_top"></div>
     <div id="templatemo_main">
         
-        <div class="col_w960 col_w900_last">
+        <div class="col_w960 col_w900_last" >
             <div class="col_w450 float_l">
-			
 				<div id="contact_form">
 				  	<h3>Registration Form</h3>
-					
-					<form method="post" name="user" action="/registration/signup">
-						<label for="username">Username:</label> <input type="text" id="username" name="username"  />
-						<div class="cleaner_h10"></div>
-									
-						<label for="password">Password:</label> <input type="text" name="password" id="password" />
-						<div class="cleaner_h10"></div>
-							
-						<label for="email">Email:</label> <input type="text" name="email" id="email"/>
-						<div class="cleaner_h10"></div>
+                    <p style="color: blue" th:text="${checkemail}"/>
+                    <form method="post" name="user" action="/registration/signup">
+                        <br>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username"  />
+                        <p style="color: red" th:text="${usernameMessage}"/>
+                        <div class="cleaner_h10"></div>
+                        <br>
+                        <label for="password">Password:</label>
+                        <input type="text" name="password" id="password" />
+                        <p style="color: red" th:text="${passwordMessage}"/>
+                        <div class="cleaner_h10"></div>
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email"/>
+                        <p style="color: red" th:text="${emailMessage}"/>
+                        <div class="cleaner_h10"></div>
+                        <br>
+                        <input type="submit" value="Sign up"/>
 
-						<input type="submit" value="Sign in"/>
-
-					</form>
+                    </form>
 				</div>
                
 			</div>

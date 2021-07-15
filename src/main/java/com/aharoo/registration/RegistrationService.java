@@ -17,19 +17,10 @@ import java.time.LocalDateTime;
 public class RegistrationService {
 
 	private final ConfirmationTokenService confirmationTokenService;
-	private final UserValidator userValidator;
 	private final ApplicationUserService userService;
 	private final EmailService emailService;
 
 	public String register(ApplicationUser user){
-
-
-		if (!userValidator.isEmailValid(user.getEmail()))
-			throw new IllegalStateException("Email is not valid");
-		else if (!userValidator.isPasswordValid(user.getPassword()))
-			throw new IllegalStateException("Password is not valid");
-		else if (!userValidator.isUsernameValid(user.getUsername()))
-			throw new IllegalStateException("Username is not valid");
 
 		ApplicationUser newUser = new ApplicationUser();
 		newUser.setUsername(user.getUsername());

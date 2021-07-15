@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="my_website@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.19">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.21">
     <root id="1">
-      <ServerVersion>13.2</ServerVersion>
+      <ServerVersion>13.3</ServerVersion>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+13441||-9223372036854775808|c|G
+13441||10|c|G
+13441||10|C|G
+13441||10|T|G</Grants>
       <DateStyle>dmy</DateStyle>
       <TimeZones>true ACDT
 true ACSST
@@ -784,63 +792,57 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1622812402</StartupTime>
+      <StartupTime>1625558554</StartupTime>
     </root>
-    <database id="2" parent="1" name="authentication">
-      <ObjectId>60968</ObjectId>
+    <database id="2" parent="1" name="my_website">
+      <ObjectId>16394</ObjectId>
+      <Grants>11||10|C|G
+11||-9223372036854775808|U|G
+11||10|U|G
+2200||-9223372036854775808|C|G
+2200||10|C|G
+2200||-9223372036854775808|U|G
+2200||10|U|G
+13158||10|C|G
+13158||-9223372036854775808|U|G
+13158||10|U|G</Grants>
       <Owner>postgres</Owner>
-    </database>
-    <database id="3" parent="1" name="my_website">
-      <ObjectId>60421</ObjectId>
-      <Owner>postgres</Owner>
-      <IntrospectionStateNumber>4584</IntrospectionStateNumber>
+      <IntrospectionStateNumber>26809</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
-    <database id="4" parent="1" name="postgres">
-      <ObjectId>60549</ObjectId>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>13442</ObjectId>
+      <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
     </database>
-    <database id="5" parent="1" name="registration">
-      <ObjectId>59893</ObjectId>
-      <Owner>postgres</Owner>
-    </database>
-    <database id="6" parent="1" name="students">
-      <ObjectId>16394</ObjectId>
-      <Owner>postgres</Owner>
-    </database>
-    <database id="7" parent="1" name="telegram_users">
-      <ObjectId>41484</ObjectId>
-      <Owner>postgres</Owner>
-    </database>
-    <database id="8" parent="1" name="users">
-      <ObjectId>24597</ObjectId>
-      <Owner>postgres</Owner>
-    </database>
-    <role id="9" parent="1" name="pg_execute_server_program">
+    <role id="4" parent="1" name="pg_execute_server_program">
       <ObjectId>4571</ObjectId>
     </role>
-    <role id="10" parent="1" name="pg_monitor">
+    <role id="5" parent="1" name="pg_monitor">
       <ObjectId>3373</ObjectId>
+      <RoleGrants>3374
+3375
+3377</RoleGrants>
     </role>
-    <role id="11" parent="1" name="pg_read_all_settings">
+    <role id="6" parent="1" name="pg_read_all_settings">
       <ObjectId>3374</ObjectId>
     </role>
-    <role id="12" parent="1" name="pg_read_all_stats">
+    <role id="7" parent="1" name="pg_read_all_stats">
       <ObjectId>3375</ObjectId>
     </role>
-    <role id="13" parent="1" name="pg_read_server_files">
+    <role id="8" parent="1" name="pg_read_server_files">
       <ObjectId>4569</ObjectId>
     </role>
-    <role id="14" parent="1" name="pg_signal_backend">
+    <role id="9" parent="1" name="pg_signal_backend">
       <ObjectId>4200</ObjectId>
     </role>
-    <role id="15" parent="1" name="pg_stat_scan_tables">
+    <role id="10" parent="1" name="pg_stat_scan_tables">
       <ObjectId>3377</ObjectId>
     </role>
-    <role id="16" parent="1" name="pg_write_server_files">
+    <role id="11" parent="1" name="pg_write_server_files">
       <ObjectId>4570</ObjectId>
     </role>
-    <role id="17" parent="1" name="postgres">
+    <role id="12" parent="1" name="postgres">
       <ObjectId>10</ObjectId>
       <SuperRole>1</SuperRole>
       <CreateDb>1</CreateDb>
@@ -849,81 +851,36 @@ false Zulu
       <Replication>1</Replication>
       <BypassRls>1</BypassRls>
     </role>
-    <schema id="18" parent="3" name="information_schema">
+    <tablespace id="13" parent="1" name="pg_default">
+      <ObjectId>1663</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1</StateNumber>
+    </tablespace>
+    <tablespace id="14" parent="1" name="pg_global">
+      <ObjectId>1664</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1</StateNumber>
+    </tablespace>
+    <schema id="15" parent="2" name="information_schema">
       <ObjectId>13158</ObjectId>
       <StateNumber>293</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="19" parent="3" name="pg_catalog">
+    <schema id="16" parent="2" name="pg_catalog">
       <ObjectId>11</ObjectId>
       <Comment>system catalog schema</Comment>
       <StateNumber>286</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="20" parent="3" name="public">
+    <schema id="17" parent="2" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>4585</IntrospectionStateNumber>
+      <IntrospectionStateNumber>26810</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
-    <access-method id="21" parent="3" name="heap">
-      <ObjectId>2</ObjectId>
-      <Comment>heap table access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.heap_tableam_handler</Handler>
-      <HandlerId>3</HandlerId>
-    </access-method>
-    <access-method id="22" parent="3" name="btree">
-      <ObjectId>403</ObjectId>
-      <Comment>b-tree index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.bthandler</Handler>
-      <HandlerId>330</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="23" parent="3" name="hash">
-      <ObjectId>405</ObjectId>
-      <Comment>hash index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.hashhandler</Handler>
-      <HandlerId>331</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="24" parent="3" name="gist">
-      <ObjectId>783</ObjectId>
-      <Comment>GiST index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.gisthandler</Handler>
-      <HandlerId>332</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="25" parent="3" name="gin">
-      <ObjectId>2742</ObjectId>
-      <Comment>GIN index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.ginhandler</Handler>
-      <HandlerId>333</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="26" parent="3" name="spgist">
-      <ObjectId>4000</ObjectId>
-      <Comment>SP-GiST index access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.spghandler</Handler>
-      <HandlerId>334</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <access-method id="27" parent="3" name="brin">
-      <ObjectId>3580</ObjectId>
-      <Comment>block range index (BRIN) access method</Comment>
-      <StateNumber>1</StateNumber>
-      <Handler>pg_catalog.brinhandler</Handler>
-      <HandlerId>335</HandlerId>
-      <Type>index</Type>
-    </access-method>
-    <extension id="28" parent="3" name="plpgsql">
+    <extension id="18" parent="2" name="plpgsql">
       <ObjectId>13428</ObjectId>
       <Comment>PL/pgSQL procedural language</Comment>
       <StateNumber>439</StateNumber>
@@ -931,158 +888,501 @@ false Zulu
       <SchemaName>pg_catalog</SchemaName>
       <SchemaId>11</SchemaId>
     </extension>
-    <language id="29" parent="3" name="c"/>
-    <language id="30" parent="3" name="internal"/>
-    <language id="31" parent="3" name="plpgsql"/>
-    <language id="32" parent="3" name="sql"/>
-    <sequence id="33" parent="20" name="app_user_sequence">
-      <ObjectId>63141</ObjectId>
+    <language id="19" parent="2" name="c">
+      <ObjectId>13</ObjectId>
+      <Comment>dynamically-loaded C functions</Comment>
+      <StateNumber>1</StateNumber>
+      <ValidatorName>fmgr_c_validator</ValidatorName>
+      <ValidatorSchema>pg_catalog</ValidatorSchema>
+    </language>
+    <language id="20" parent="2" name="internal">
+      <ObjectId>12</ObjectId>
+      <Comment>built-in functions</Comment>
+      <StateNumber>1</StateNumber>
+      <ValidatorName>fmgr_internal_validator</ValidatorName>
+      <ValidatorSchema>pg_catalog</ValidatorSchema>
+    </language>
+    <language id="21" parent="2" name="plpgsql">
+      <ObjectId>13432</ObjectId>
+      <Comment>PL/pgSQL procedural language</Comment>
+      <StateNumber>439</StateNumber>
+      <Trusted>1</Trusted>
+      <HandlerName>plpgsql_call_handler</HandlerName>
+      <HandlerSchema>pg_catalog</HandlerSchema>
+      <InlineHandlerName>plpgsql_inline_handler</InlineHandlerName>
+      <InlineHandlerSchema>pg_catalog</InlineHandlerSchema>
+      <ValidatorName>plpgsql_validator</ValidatorName>
+      <ValidatorSchema>pg_catalog</ValidatorSchema>
+    </language>
+    <language id="22" parent="2" name="sql">
+      <ObjectId>14</ObjectId>
+      <Comment>SQL-language functions</Comment>
+      <StateNumber>1</StateNumber>
+      <Trusted>1</Trusted>
+      <ValidatorName>fmgr_sql_validator</ValidatorName>
+      <ValidatorSchema>pg_catalog</ValidatorSchema>
+    </language>
+    <access-method id="23" parent="2" name="heap">
+      <ObjectId>2</ObjectId>
+      <Comment>heap table access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.heap_tableam_handler</Handler>
+      <HandlerId>3</HandlerId>
+    </access-method>
+    <access-method id="24" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="25" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="26" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="27" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="28" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="29" parent="2" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <sequence id="30" parent="17" name="app_user_sequence">
+      <ObjectId>29422</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>4570</StateNumber>
+      <StateNumber>22469</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
-    <sequence id="34" parent="20" name="confirmation_token_sequence">
-      <ObjectId>63143</ObjectId>
+    <sequence id="31" parent="17" name="confirmation_token_sequence">
+      <ObjectId>29424</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>4571</StateNumber>
+      <StateNumber>22470</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
-    <sequence id="35" parent="20" name="hibernate_sequence">
-      <ObjectId>62553</ObjectId>
+    <sequence id="32" parent="17" name="image_sequence">
+      <ObjectId>29426</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>4213</StateNumber>
+      <StateNumber>22471</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
-    <table id="36" parent="20" name="confirmation_token">
-      <ObjectId>63145</ObjectId>
-      <Outdated>1</Outdated>
+    <table id="33" parent="17" name="confirmation_token">
+      <ObjectId>29428</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>4574</StateNumber>
+      <StateNumber>22475</StateNumber>
     </table>
-    <table id="37" parent="20" name="users">
-      <ObjectId>63150</ObjectId>
-      <Outdated>1</Outdated>
+    <table id="34" parent="17" name="image">
+      <ObjectId>29433</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>4574</StateNumber>
+      <StateNumber>22473</StateNumber>
     </table>
-    <column id="38" parent="36" name="token_id">
+    <table id="35" parent="17" name="persistent_logins">
+      <ObjectId>26087</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1571</StateNumber>
+    </table>
+    <table id="36" parent="17" name="spring_session">
+      <ObjectId>26044</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1403</StateNumber>
+    </table>
+    <table id="37" parent="17" name="spring_session_attributes">
+      <ObjectId>26052</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1403</StateNumber>
+    </table>
+    <table id="38" parent="17" name="users">
+      <ObjectId>29441</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>22475</StateNumber>
+    </table>
+    <column id="39" parent="33" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4572</StateNumber>
+      <StateNumber>22472</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="39" parent="36" name="confirmed_at">
+    <column id="40" parent="33" name="confirmed_at">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>4572</StateNumber>
+      <StateNumber>22472</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="40" parent="36" name="created_at">
+    <column id="41" parent="33" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4572</StateNumber>
+      <StateNumber>22472</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="41" parent="36" name="expires_at">
+    <column id="42" parent="33" name="expires_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4572</StateNumber>
+      <StateNumber>22472</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="42" parent="36" name="token">
+    <column id="43" parent="33" name="token">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4572</StateNumber>
+      <StateNumber>22472</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="43" parent="36" name="user_id">
+    <column id="44" parent="33" name="user_id">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4572</StateNumber>
+      <StateNumber>22472</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="44" parent="36" name="confirmation_token_pkey">
-      <ObjectId>63148</ObjectId>
-      <StateNumber>4572</StateNumber>
-      <ColNames>token_id</ColNames>
+    <index id="45" parent="33" name="confirmation_token_pkey">
+      <ObjectId>29431</ObjectId>
+      <StateNumber>22472</StateNumber>
+      <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
     </index>
-    <key id="45" parent="36" name="confirmation_token_pkey">
-      <ObjectId>63149</ObjectId>
-      <StateNumber>4572</StateNumber>
-      <ColNames>token_id</ColNames>
+    <key id="46" parent="33" name="confirmation_token_pkey">
+      <ObjectId>29432</ObjectId>
+      <StateNumber>22472</StateNumber>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>confirmation_token_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="46" parent="36" name="fkah4p1rycwibwm6s9bsyeckq51">
-      <ObjectId>63158</ObjectId>
-      <StateNumber>4574</StateNumber>
+    <foreign-key id="47" parent="33" name="fkah4p1rycwibwm6s9bsyeckq51">
+      <ObjectId>29449</ObjectId>
+      <StateNumber>22475</StateNumber>
       <ColNames>user_id</ColNames>
-      <RefTableId>63150</RefTableId>
+      <RefTableId>29441</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>user_id</RefColNames>
     </foreign-key>
-    <column id="47" parent="37" name="user_id">
+    <column id="48" parent="34" name="image_id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>22473</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="49" parent="34" name="description">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>22473</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="50" parent="34" name="filename">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>22473</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="51" parent="34" name="image_pkey">
+      <ObjectId>29439</ObjectId>
+      <StateNumber>22473</StateNumber>
+      <ColNames>image_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>3124</ClassIds>
+    </index>
+    <key id="52" parent="34" name="image_pkey">
+      <ObjectId>29440</ObjectId>
+      <StateNumber>22473</StateNumber>
+      <ColNames>image_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>image_pkey</UnderlyingIndexName>
+    </key>
+    <column id="53" parent="35" name="username">
+      <Position>1</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1571</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="54" parent="35" name="series">
+      <Position>2</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1571</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="55" parent="35" name="token">
+      <Position>3</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1571</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="56" parent="35" name="last_used">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1571</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="57" parent="35" name="persistent_logins_pkey">
+      <ObjectId>26090</ObjectId>
+      <StateNumber>1571</StateNumber>
+      <ColNames>series</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ClassIds>3126</ClassIds>
+    </index>
+    <key id="58" parent="35" name="persistent_logins_pkey">
+      <ObjectId>26091</ObjectId>
+      <StateNumber>1571</StateNumber>
+      <ColNames>series</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>persistent_logins_pkey</UnderlyingIndexName>
+    </key>
+    <column id="59" parent="36" name="primary_id">
+      <Position>1</Position>
+      <DataType>char(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1399</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="60" parent="36" name="session_id">
+      <Position>2</Position>
+      <DataType>char(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1399</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="61" parent="36" name="creation_time">
+      <Position>3</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1399</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="62" parent="36" name="last_access_time">
+      <Position>4</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1399</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="63" parent="36" name="max_inactive_interval">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1399</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="64" parent="36" name="expiry_time">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1399</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="65" parent="36" name="principal_name">
+      <Position>7</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>1399</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="66" parent="36" name="spring_session_pk">
+      <ObjectId>26047</ObjectId>
+      <StateNumber>1399</StateNumber>
+      <ColNames>primary_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ClassIds>10004</ClassIds>
+    </index>
+    <index id="67" parent="36" name="spring_session_ix1">
+      <ObjectId>26049</ObjectId>
+      <StateNumber>1400</StateNumber>
+      <ColNames>session_id</ColNames>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ClassIds>10004</ClassIds>
+    </index>
+    <index id="68" parent="36" name="spring_session_ix2">
+      <ObjectId>26050</ObjectId>
+      <StateNumber>1401</StateNumber>
+      <ColNames>expiry_time</ColNames>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>3124</ClassIds>
+    </index>
+    <index id="69" parent="36" name="spring_session_ix3">
+      <ObjectId>26051</ObjectId>
+      <StateNumber>1402</StateNumber>
+      <ColNames>principal_name</ColNames>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ClassIds>3126</ClassIds>
+    </index>
+    <key id="70" parent="36" name="spring_session_pk">
+      <ObjectId>26048</ObjectId>
+      <StateNumber>1399</StateNumber>
+      <ColNames>primary_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>spring_session_pk</UnderlyingIndexName>
+    </key>
+    <column id="71" parent="37" name="session_primary_id">
+      <Position>1</Position>
+      <DataType>char(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1403</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="72" parent="37" name="attribute_name">
+      <Position>2</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1403</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="73" parent="37" name="attribute_bytes">
+      <Position>3</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1403</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <index id="74" parent="37" name="spring_session_attributes_pk">
+      <ObjectId>26058</ObjectId>
+      <StateNumber>1403</StateNumber>
+      <ColNames>session_primary_id
+attribute_name</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>100,100</CollationIds>
+      <CollationNames>default
+default</CollationNames>
+      <ClassIds>10004,3126</ClassIds>
+    </index>
+    <key id="75" parent="37" name="spring_session_attributes_pk">
+      <ObjectId>26059</ObjectId>
+      <StateNumber>1403</StateNumber>
+      <ColNames>session_primary_id
+attribute_name</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>spring_session_attributes_pk</UnderlyingIndexName>
+    </key>
+    <foreign-key id="76" parent="37" name="spring_session_attributes_fk">
+      <ObjectId>26060</ObjectId>
+      <StateNumber>1403</StateNumber>
+      <ColNames>session_primary_id</ColNames>
+      <RefTableId>26044</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>spring_session</RefTableName>
+      <RefKeyName>spring_session_pk</RefKeyName>
+      <RefColNames>primary_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="77" parent="38" name="user_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4573</StateNumber>
+      <StateNumber>22474</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="48" parent="37" name="email">
+    <column id="78" parent="38" name="email">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>4573</StateNumber>
+      <StateNumber>22474</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="49" parent="37" name="enabled">
+    <column id="79" parent="38" name="enabled">
       <Position>3</Position>
       <DataType>boolean|0s</DataType>
-      <StateNumber>4573</StateNumber>
+      <StateNumber>22474</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="50" parent="37" name="locked">
+    <column id="80" parent="38" name="filename">
       <Position>4</Position>
-      <DataType>boolean|0s</DataType>
-      <StateNumber>4573</StateNumber>
-      <TypeId>16</TypeId>
-    </column>
-    <column id="51" parent="37" name="password">
-      <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>4573</StateNumber>
+      <StateNumber>22474</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="52" parent="37" name="role">
+    <column id="81" parent="38" name="locked">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>22474</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="82" parent="38" name="password">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>4573</StateNumber>
+      <StateNumber>22474</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="53" parent="37" name="username">
+    <column id="83" parent="38" name="role">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>4573</StateNumber>
+      <StateNumber>22474</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="54" parent="37" name="users_pkey">
-      <ObjectId>63156</ObjectId>
-      <StateNumber>4573</StateNumber>
+    <column id="84" parent="38" name="username">
+      <Position>8</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>22474</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="85" parent="38" name="users_pkey">
+      <ObjectId>29447</ObjectId>
+      <StateNumber>22474</StateNumber>
       <ColNames>user_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
     </index>
-    <key id="55" parent="37" name="users_pkey">
-      <ObjectId>63157</ObjectId>
-      <StateNumber>4573</StateNumber>
+    <key id="86" parent="38" name="users_pkey">
+      <ObjectId>29448</ObjectId>
+      <StateNumber>22474</StateNumber>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>

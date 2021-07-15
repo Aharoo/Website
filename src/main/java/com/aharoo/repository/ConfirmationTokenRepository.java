@@ -12,9 +12,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Repository
-@Transactional(readOnly = true)
-public interface ConfirmationTokenRepository
-		extends JpaRepository<ConfirmationToken, Integer> {
+public interface ConfirmationTokenRepository extends JpaRepository<ConfirmationToken, Integer> {
 
 	Optional<ConfirmationToken> findByToken(String token);
 
