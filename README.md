@@ -1,4 +1,4 @@
-# AharooWebSite
+# Website
 
 Simple website, where user can upload image (beautiful art) with comment, register and check in his account profile prices of the popular cryptocurrencies and also check current season animes with additional information and links, add image on his profile.
 
